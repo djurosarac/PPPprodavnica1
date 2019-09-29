@@ -17,14 +17,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+                    @Html.ActionLink("Prodavnica", "Index", "Prodavnicas", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Proizvod", "Index", "Proizvods")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Proizvodi", "Index", "Proizvods")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Racuni", "Index", "Racuns")</li>
+                        <li>@Html.ActionLink("Otpremnice", "Index", "Otpremnicas")</li>
+                        <li>@Html.ActionLink("Profakture", "Index", "Profakturas")</li>
+
+                    }
+
+                    @if (User.Identity.Equals("djuro@gmail.com"))
+                    {
+                        <li>@Html.ActionLink("Registruj novog korisnika", "Register", "Account")</li>
+                    }
+
                 </ul>
+                
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -33,7 +45,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Online prodavnica sanitarne opreme</p>
         </footer>
     </div>
 

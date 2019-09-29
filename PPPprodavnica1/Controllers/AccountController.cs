@@ -136,7 +136,7 @@ namespace PPPprodavnica1.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize (Users="djuro@gmail.com")]
         public ActionResult Register()
         {
             return View();
@@ -145,7 +145,7 @@ namespace PPPprodavnica1.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Users = "djuro@gmail.com")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {

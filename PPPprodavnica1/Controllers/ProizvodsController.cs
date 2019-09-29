@@ -10,6 +10,7 @@ using PPPprodavnica1;
 
 namespace PPPprodavnica1.Controllers
 {
+    [Authorize(Users = "djuro@gmail.com, luka@gmail.com, nikola@gmail.com")]
     public class ProizvodsController : Controller
     {
         private ProjekatEntities db = new ProjekatEntities();
@@ -17,12 +18,14 @@ namespace PPPprodavnica1.Controllers
 
 
         // GET: Proizvods
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Proizvod.ToList());
         }
 
         // GET: Proizvods/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

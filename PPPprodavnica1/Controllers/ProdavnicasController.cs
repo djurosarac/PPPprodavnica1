@@ -10,11 +10,13 @@ using PPPprodavnica1;
 
 namespace PPPprodavnica1.Controllers
 {
+    [Authorize(Users = "djuro@gmail.com, luka@gmail.com, nikola@gmail.com")]
     public class ProdavnicasController : Controller
     {
         private ProjekatEntities db = new ProjekatEntities();
 
         // GET: Prodavnicas
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var prodavnica = db.Prodavnica.Include(p => p.Proizvod);
@@ -22,6 +24,7 @@ namespace PPPprodavnica1.Controllers
         }
 
         // GET: Prodavnicas/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

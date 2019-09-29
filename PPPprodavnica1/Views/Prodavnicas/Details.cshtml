@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalji</h2>
 
 <div>
     <h4>Prodavnica</h4>
@@ -45,6 +45,9 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.RbUnosa }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    @if (User.Identity.IsAuthenticated) {
+        @Html.ActionLink("Izmeni ", "Edit", new { id = Model.RbUnosa })  
+    }
+    @Html.ActionLink("Vratite se nazad", "Index")
 </p>

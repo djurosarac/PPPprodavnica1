@@ -1,13 +1,16 @@
 ﻿@model IEnumerable<PPPprodavnica1.Prodavnica>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Prodavnica";
 }
 
-<h2>Index</h2>
+<h2>Pregled stanja u prodavnici</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Novi unos", "Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -41,9 +44,13 @@
             @Html.DisplayFor(modelItem => item.Proizvod.Naziv)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RbUnosa }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RbUnosa }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RbUnosa })
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Izmeni ", "Edit", new { id = item.RbUnosa })  
+                @Html.ActionLink("Obrisi ", "Delete", new { id = item.RbUnosa })
+            }
+                @Html.ActionLink("Detalji", "Details", new { id = item.RbUnosa }) 
+
         </td>
     </tr>
 }

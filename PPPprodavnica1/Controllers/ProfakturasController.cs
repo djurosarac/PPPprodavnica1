@@ -10,6 +10,7 @@ using PPPprodavnica1;
 
 namespace PPPprodavnica1.Controllers
 {
+    [Authorize(Users = "djuro@gmail.com, luka@gmail.com, nikola@gmail.com")]
     public class ProfakturasController : Controller
     {
         private ProjekatEntities db = new ProjekatEntities();
