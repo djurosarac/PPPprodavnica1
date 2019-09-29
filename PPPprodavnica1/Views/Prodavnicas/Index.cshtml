@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PPPprodavnica1.Prodavnica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vreme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proizvod.Naziv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kolicina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vreme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proizvod.Naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RbUnosa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RbUnosa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RbUnosa })
+        </td>
+    </tr>
+}
+
+</table>

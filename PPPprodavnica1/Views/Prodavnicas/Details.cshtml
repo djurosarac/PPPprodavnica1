@@ -1,0 +1,50 @@
+﻿@model PPPprodavnica1.Prodavnica
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prodavnica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kolicina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vreme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vreme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proizvod.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proizvod.Naziv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RbUnosa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

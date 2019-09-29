@@ -1,0 +1,58 @@
+﻿@model PPPprodavnica1.Profaktura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Profaktura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kolicina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UkupnaVrednost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UkupnaVrednost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vreme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vreme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proizvod.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proizvod.Naziv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDProfakture }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
