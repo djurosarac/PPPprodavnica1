@@ -2,37 +2,80 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ONLINE prodavnica sanitarne OPREME</h1>
+<style>
+    #hero{
+        background:linear-gradient(0deg,rgba(128, 128, 128, 0.2),rgb(0, 0, 0, 0.2)),url("https://i.pinimg.com/originals/eb/69/57/eb69575bf27d78c851267a959c23c4e2.jpg");
+        background-attachment:fixed;
+        background-position:bottom;
+        background-size:cover;
+        
+    }
+
+    .slika-fabrike{
+        background:url("https://www.carreauconcept.com/wp-content/uploads/2017/03/ragno_web.png");
+        background-size:contain;
+        height:250px;
+    }
+     .slika-fabrike2{
+        background:url("https://haustechnik-binder.de/media/images/org/laufenlogo.jpg");
+        background-size:cover;
+        background-position:center;
+        height:250px;
+    }
+      .slika-fabrike3{
+        background:url("https://pbs.twimg.com/profile_images/998574508146475009/kCSi5XBH_400x400.jpg");
+        background-size:cover;
+        background-position: center;
+        height:250px;
+    }
+</style>
+
+<div id="hero" class="row" style="height:50vh; text-align:center; background-color:lightsteelblue; line-height:50vh; color:whitesmoke" >
+    <h1 style="padding-top:10px;">Online prodavnica sanitarne opreme</h1>
     <p class="lead">Pregledajte proizvode</p>
-    <p><button>@Html.ActionLink("Proizvodi", "Index", "Proizvods")</button></p>
+    <p>@Html.ActionLink("Proizvodi", "Index", "Proizvods", new {@class="btn btn-primary"})</p>
 </div>
 
-<div class="row">
-    <center>
-        <h3><b><u>O nama</u></b></h3>
-        <h4>
-            Kao prodavnica sa najvećim asortimanom proizvoda i najboljim cenama na tržištu možemo da se pohvalimo
-            da smo najkonkurentnija online prodavnica sanitarne opreme u regionu.<br /><br />
-            Pogledajte neke od naših dobavljaca iz inostranstva
-        </h4>
-    </center>
-    <div class="col-md-4">
-        <h2>Fabrika keramike Ragno</h2>
-        <p>
-            Jedna od vodecih fabrika italijanske keramike.
-        </p>
-        <p><a class="btn btn-default" href="https://www.ragnoworld.com/">Pogledaj &raquo;</a></p>
+<div class="container">
+
+
+
+    <div class="row">
+        <center>
+            <h3><b>O nama</b></h3>
+            <br />
+            <h4>
+                Kao prodavnica sa najvećim asortimanom proizvoda i najboljim cenama na tržištu možemo da se pohvalimo
+                da smo najkonkurentnija online prodavnica sanitarne opreme u regionu.<br /><br />
+                Pogledajte neke od naših dobavljaca iz inostranstva
+            </h4>
+        </center><br />
+        <div class="col-md-4">
+            <div class="slika-fabrike">
+
+            </div>
+            <h2><b>Fabrika keramike Ragno</b></h2>
+            <p>
+                Jedna od vodecih fabrika italijanske keramike.
+            </p>
+            <p><a class="btn btn-default" href="https://www.ragnoworld.com/">Pogledaj &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <div class="slika-fabrike2">
+
+            </div>
+            <h2><b>Sanitarija Laufen</b></h2>
+            <p>Laufen sanitarija je jedna od najboljih i najkvalitetnijih sanitarija sa proizvodnjom u Švajcarskoj.</p>
+            <p><a class="btn btn-default" href="https://www.laufen.com/">Pogledaj &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <div class="slika-fabrike3">
+
+            </div>
+            <h2><b>Hansgrohe</b></h2>
+            <p>Najpopularniji proizvodjač baterija i mešača u svetu.</p>
+            <p><a class="btn btn-default" href="https://www.hansgrohe.com/">Pogledaj &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Sanitarija Laufen</h2>
-        <p>Laufen sanitarija je jedna od najboljih i najkvalitetnijih sanitarija sa proizvodnjom u Švajcarskoj.</p>
-        <p><a class="btn btn-default" href="https://www.laufen.com/">Pogledaj &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Hansgrohe</h2>
-        <p>Najpopularniji proizvodjač baterija i mešača u svetu.</p>
-        <p><a class="btn btn-default" href="https://www.hansgrohe.com/">Pogledaj &raquo;</a></p>
-    </div>
+    <h5 style="text-align-last:center"><i>Pored ovih postoje jos mnogi svetski brendovi u našoj ponudi.</i></h5>
 </div>
-<h4 style="text-align-last:center">Pored ovih postoje jos mnogi svetski brendovi u našoj ponudi.</h4>
