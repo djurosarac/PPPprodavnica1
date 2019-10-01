@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Racuni</h2>
+<h2 style="margin:20px; text-align:center">Racuni</h2>
 
 <p>
     @Html.ActionLink("Napravi novi", "Create")
 </p>
-<table class="table">
+<table class="table table-hover table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Kolicina)
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Proizvod.Naziv)
         </td>
         <td>
-            @Html.ActionLink("Izmeni", "Edit", new { id=item.IDRacuna }) |
-            @Html.ActionLink("Detalji", "Details", new { id=item.IDRacuna }) |
-            @Html.ActionLink("Obrisi", "Delete", new { id=item.IDRacuna })
+            @Html.ActionLink("Izmeni", "Edit", new { id=item.IDRacuna }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDRacuna }, new { @class = "btn btn-danger" }) |
+            @Html.ActionLink("Obrisi", "Delete", new { id=item.IDRacuna }, new { @class = "btn btn-info" })
         </td>
     </tr>
 }

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Otpremnice</h2>
+<h2 style="margin:20px; text-align:center">Otpremnice</h2>
 
 <p>
     @Html.ActionLink("Napravi novu", "Create")
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Proizvod.Naziv)
         </td>
         <td>
-            @Html.ActionLink("Izmeni", "Edit", new { id=item.IDOtpremnice }) |
-            @Html.ActionLink("Detalji", "Details", new { id=item.IDOtpremnice }) |
-            @Html.ActionLink("Obrisi", "Delete", new { id=item.IDOtpremnice })
+            @Html.ActionLink("Izmeni", "Edit", new { id=item.IDOtpremnice }, new { @class = "btn btn-primary" })|
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDOtpremnice }, new { @class = "btn btn-danger" })|
+            @Html.ActionLink("Obrisi", "Delete", new { id=item.IDOtpremnice }, new { @class = "btn btn-info" }))
         </td>
     </tr>
 }
