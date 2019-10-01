@@ -4,19 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Lista proizvoda</h2>
+
+<div class="container">
+    <h2 style="margin:20px; text-align:center">Lista proizvoda</h2>
 
 
     @if (User.Identity.IsAuthenticated)
     {
-    <p>
-        @Html.ActionLink("Unesi novi proizvod", "Create")
-        
-    </p>
+        <p>
+            @Html.ActionLink("Unesi novi proizvod", "Create")
+
+        </p>
     }
-    <table class="table">
+    <table class="table table-bordered table-striped table-hover">
         <tr>
-            <th>
+            <th class="thead-dark">
                 @Html.DisplayNameFor(model => model.Naziv)
             </th>
             <th>
@@ -49,12 +51,13 @@
                 <td>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("Izmeni ", "Edit", new { id = item.BarKodArtikla })
-                        @Html.ActionLink("Obrisi ", "Delete", new { id = item.BarKodArtikla })
+                        @Html.ActionLink("Izmeni ", "Edit", new { id = item.BarKodArtikla }, new { @class = "btn btn-primary" }) 
+                        @Html.ActionLink("Obrisi ", "Delete", new { id = item.BarKodArtikla }, new { @class = "btn btn-danger" }) 
                     }
-                    @Html.ActionLink("Detalji", "Details", new { id = item.BarKodArtikla })
+                    @Html.ActionLink("Detalji", "Details", new { id = item.BarKodArtikla }, new { @class = "btn btn-info" })
                 </td>
             </tr>
         }
 
     </table>
+</div>

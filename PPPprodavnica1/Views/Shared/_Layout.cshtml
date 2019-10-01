@@ -27,15 +27,17 @@
                         <li>@Html.ActionLink("Racuni", "Index", "Racuns")</li>
                         <li>@Html.ActionLink("Otpremnice", "Index", "Otpremnicas")</li>
                         <li>@Html.ActionLink("Profakture", "Index", "Profakturas")</li>
-
-                    }
-
-                    @if (User.Identity.Equals("djuro@gmail.com"))
-                    {
                         <li>@Html.ActionLink("Registruj novog korisnika", "Register", "Account")</li>
+
+
                     }
+
+
 
                 </ul>
+               
+                    
+
                 
                 @Html.Partial("_LoginPartial")
             </div>
