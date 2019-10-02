@@ -9,11 +9,11 @@
         <p>
             @if (User.Identity.IsAuthenticated)
             {
-                @Html.ActionLink("Novi unos", "Create")
+                @Html.ActionLink("Novi unos", "Create", new { },new { @class="btn btn-primary"})
             }
         </p>
-        <table class="table table-striped table-dark">
-            <tr>
+        <table class="table table-primary table-striped table-hover">
+            <tr style="background-color:#111111;color:ghostwhite">
                 <th class="thead-dark">
                     @Html.DisplayNameFor(model => model.Kolicina)
                 </th>

@@ -3,55 +3,57 @@
 @{
     ViewBag.Title = "Index";
 }
+    <div class="container">
+        <h2 style="margin:20px; text-align:center">Racuni</h2>
 
-<h2 style="margin:20px; text-align:center">Racuni</h2>
+        <p>
+            @Html.ActionLink("Napravi novi", "Create", new { }, new { @class = "btn btn-primary" })
+        </p>
+        <table class="table table-hover table-striped">
+            <tr style="background-color:#111111;color:ghostwhite">
+                <th>
+                    @Html.DisplayNameFor(model => model.Kolicina)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UkupnaVrednost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Datum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vreme)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Proizvod.Naziv)
+                </th>
+                <th></th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Napravi novi", "Create")
-</p>
-<table class="table table-hover table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Kolicina)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UkupnaVrednost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Datum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vreme)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Proizvod.Naziv)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kolicina)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UkupnaVrednost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Datum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vreme)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Proizvod.Naziv)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Izmeni", "Edit", new { id = item.IDRacuna }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Detalji", "Details", new { id = item.IDRacuna }, new { @class = "btn btn-danger" }) |
+                        @Html.ActionLink("Obrisi", "Delete", new { id = item.IDRacuna }, new { @class = "btn btn-info" })
+                    </td>
+                </tr>
+            }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kolicina)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UkupnaVrednost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Datum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vreme)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Proizvod.Naziv)
-        </td>
-        <td>
-            @Html.ActionLink("Izmeni", "Edit", new { id=item.IDRacuna }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Detalji", "Details", new { id=item.IDRacuna }, new { @class = "btn btn-danger" }) |
-            @Html.ActionLink("Obrisi", "Delete", new { id=item.IDRacuna }, new { @class = "btn btn-info" })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
+    </div>

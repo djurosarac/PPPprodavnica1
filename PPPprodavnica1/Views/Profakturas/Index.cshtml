@@ -9,10 +9,10 @@
     <h2 style="margin:20px; text-align:center">Profakture</h2>
 
 <p>
-    @Html.ActionLink("Napravi novu profakturu", "Create")
+    @Html.ActionLink("Napravi novu profakturu", "Create", new { },new { @class="btn btn-primary"})
 </p>
 <table class="table">
-    <tr>
+    <tr style="background-color:#111111;color:ghostwhite">
         <th>
             @Html.DisplayNameFor(model => model.Kolicina)
         </th>

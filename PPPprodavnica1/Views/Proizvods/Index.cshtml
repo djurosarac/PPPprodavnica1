@@ -12,52 +12,53 @@
     @if (User.Identity.IsAuthenticated)
     {
         <p>
-            @Html.ActionLink("Unesi novi proizvod", "Create")
+            @Html.ActionLink("Unesi novi proizvod", "Create", new { },new { @class="btn btn-primary"})
 
         </p>
     }
-    <table class="table table-bordered table-striped table-hover">
+<table class="table table-primary table-striped table-hover">
+    
+    <tr style="background-color:#111111;color:ghostwhite">
+        <th class="thead-dark">
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UlaznaCena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IzlaznaCena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
-            <th class="thead-dark">
-                @Html.DisplayNameFor(model => model.Naziv)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UlaznaCena)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IzlaznaCena)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opis)
-            </th>
-            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UlaznaCena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IzlaznaCena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Izmeni ", "Edit", new { id = item.BarKodArtikla }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Obrisi ", "Delete", new { id = item.BarKodArtikla }, new { @class = "btn btn-danger" })
+                }
+                @Html.ActionLink("Detalji", "Details", new { id = item.BarKodArtikla }, new { @class = "btn btn-info" })
+            </td>
         </tr>
+    }
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Naziv)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UlaznaCena)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IzlaznaCena)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Opis)
-                </td>
-                <td>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        @Html.ActionLink("Izmeni ", "Edit", new { id = item.BarKodArtikla }, new { @class = "btn btn-primary" }) 
-                        @Html.ActionLink("Obrisi ", "Delete", new { id = item.BarKodArtikla }, new { @class = "btn btn-danger" }) 
-                    }
-                    @Html.ActionLink("Detalji", "Details", new { id = item.BarKodArtikla }, new { @class = "btn btn-info" })
-                </td>
-            </tr>
-        }
-
-    </table>
+</table>
 </div>
